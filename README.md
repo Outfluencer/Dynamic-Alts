@@ -8,16 +8,16 @@ org.apache.http example
         // get list of accounts by id
 
         CloseableHttpClient client = HttpClientBuilder.create().build();
-			  HttpPost post = new HttpPost("http://api.dynamic-alts.com/api/v1/accounts");
-				post.setHeader("Content-Type", "application/json");
-				post.setHeader("Accept", "application/json");
-				post.setHeader("Accept-Charset", "UTF-8");
-				JsonObject obj = new JsonObject();
-				obj.addProperty("api-token", "your token");
-				StringEntity entity = new StringEntity(GSON.toJson(obj));
-				post.setEntity(entity);
-				final JsonObject json = new JsonParser().parse(EntityUtils.toString(client.execute(post).getEntity())).getAsJsonObject();
-				JsonArray accounts = json.get("accounts").getAsJsonArray(); // list of all accounts
+	HttpPost post = new HttpPost("http://api.dynamic-alts.com/api/v1/accounts");
+	post.setHeader("Content-Type", "application/json");
+	post.setHeader("Accept", "application/json");
+	post.setHeader("Accept-Charset", "UTF-8");
+	JsonObject obj = new JsonObject();
+	obj.addProperty("api-token", "your token");
+	StringEntity entity = new StringEntity(GSON.toJson(obj));
+	post.setEntity(entity);
+	final JsonObject json = new JsonParser().parse(EntityUtils.toString(client.execute(post).getEntity())).getAsJsonObject();
+	JsonArray accounts = json.get("accounts").getAsJsonArray(); // list of all accounts
 
         // int id
         // String name
