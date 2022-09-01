@@ -7,7 +7,7 @@ org.apache.http example
 
         // get list of accounts by id
 
-        CloseableHttpClient client = HttpClientBuilder.create().build();
+            CloseableHttpClient client = HttpClientBuilder.create().build();
 		HttpPost post = new HttpPost("http://api.dynamic-alts.com/api/v1/accounts");
 		post.setHeader("Content-Type", "application/json");
 		post.setHeader("Accept", "application/json");
